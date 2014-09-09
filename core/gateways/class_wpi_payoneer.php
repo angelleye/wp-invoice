@@ -31,15 +31,18 @@ class wpi_payoneer extends wpi_gateway_base {
             ),
             'usd_bank_name' => array(
                 'label' => __("Bank Name"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'The name of the bank of your US collection account (i.e.: Bank of America)', WPI )
             ),
             'usd_account_number' => array(
                 'label' => __("Account Number"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'The 13 digit number of your US collection account', WPI )
             ),
             'usd_bank_routing_number' => array(
                 'label' => __("ABA (Bank Routing Number)"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'The 9 digit bank routing number', WPI )
             ),
             'euro_details' => array(
                 'type' => "static",
@@ -47,15 +50,18 @@ class wpi_payoneer extends wpi_gateway_base {
             ),
             'euro_bank_name' => array(
                 'label' => __("Bank Name"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'The name of the bank of your EUR collection account (i.e.: WireCard)', WPI )
             ),
             'euro_bic' => array(
                 'label' => __("BIC"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'Business Identifier Code (I.E WIREDEMM)', WPI )
             ),
             'euro_iban' => array(
                 'label' => __("IBAN"),
-                'value' => ''
+                'value' => '',
+                'description' => __( 'The 22 digit International Bank Account Number (I.E DExxxxxxxxxxxxx)', WPI )
             )
         )
     );
@@ -141,7 +147,6 @@ class wpi_payoneer extends wpi_gateway_base {
         
         //** If section is not empty */
         if (!empty($this->front_end_fields[$key])) {
-          $html = '';
           ob_start();
           ?>
           <ul class="wpi_checkout_block">
